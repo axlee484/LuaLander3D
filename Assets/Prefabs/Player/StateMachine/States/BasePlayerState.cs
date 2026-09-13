@@ -10,10 +10,15 @@ public enum PlayerStateId
     Dead
 }
 
-public class PlayerContext
+public readonly struct PlayerContext
 {
-    
+    public readonly Player player;
+    public PlayerContext(Player player)
+    {
+        this.player = player;
+    }
 }
+
 public abstract class BasePlayerState : IState<PlayerStateId, PlayerContext>
 {
     public event Action<PlayerStateId> ChangeState;
@@ -38,4 +43,11 @@ public abstract class BasePlayerState : IState<PlayerStateId, PlayerContext>
     public virtual void FixedUpdate(){}
 
     public virtual void Update(){}
+
+    public virtual (float forwardInput, float rotationInput) GetInput()
+    {
+        var forward = GameInput.InputActions.Player.Thrust.ReadValue<float>();
+        var rotation = GameInput.InputActions.Player.Tilt.ReadValue<float>();
+        return (forward, rotation);
+    }
 }

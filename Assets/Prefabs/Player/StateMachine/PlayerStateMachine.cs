@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerStateMachine : BaseStateMachine<PlayerStateId, PlayerContext>
 {
+    private PlayerContext CreateContext()
+    {
+        var player = GetComponent<Player>();
+        return new PlayerContext(player);
+    }
     protected override void Setup()
     {
-        var context = new PlayerContext();
+        var context = CreateContext();
         var readyState = new Ready(PlayerStateId.Ready, context);
         var idleState = new Idle(PlayerStateId.Idle, context);
         var flyingState = new Flying(PlayerStateId.Flying, context);

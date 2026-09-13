@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseStateMachine<TStateType, TContext> : MonoBehaviour 
 where TStateType  : Enum
-where TContext: class
+where TContext: struct
 {
     [SerializeField] private TStateType initialStateId;
     private IState<TStateType, TContext> currentState;
