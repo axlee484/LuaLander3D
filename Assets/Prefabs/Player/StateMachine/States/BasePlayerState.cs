@@ -36,9 +36,15 @@ public abstract class BasePlayerState : IState<PlayerStateId, PlayerContext>
         this.context = context;
     }
 
-    public virtual void Enter(){}
+    public virtual void Enter()
+    {
+        Debug.Log($"Entering {stateId}");
+    }
 
-    public virtual void Exit(){}
+    public virtual void Exit()
+    {
+        Debug.Log($"Exiting {stateId}");
+    }
 
     public virtual void FixedUpdate(){}
 

@@ -9,6 +9,7 @@ public class Autoload : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         gameObject.AddComponent<GameInput>();
+        gameObject.AddComponent<AudioManager>();
     }
 
 }

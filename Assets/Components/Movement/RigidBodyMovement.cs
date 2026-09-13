@@ -26,8 +26,6 @@ public class RigidBodyMovement : MonoBehaviour, IMoveable
     public void Rotate(Vector3 axis)
     {
         var rot = axis * rotationSpeed;
-        print("rot +" +rot);
-        print(axis);
         rigidBody.AddTorque(rot);
     }
 }

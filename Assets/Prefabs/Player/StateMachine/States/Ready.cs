@@ -8,7 +8,8 @@ namespace PlayerStates.StateMachine.States
         
         public override void Update()
         {
-            var input = GetInput();
+            var (forwardInput, rotationInput) = GetInput();
+            if(forwardInput != 0 || rotationInput != 0) InvokeChangeState(PlayerStateId.Idle);
         }
     }
 }
