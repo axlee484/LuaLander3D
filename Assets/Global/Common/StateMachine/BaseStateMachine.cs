@@ -8,9 +8,9 @@ where TContext: class
 {
     [SerializeField] private TStateType initialStateId;
     private IState<TStateType, TContext> currentState;
-    private readonly Dictionary<TStateType, IState<TStateType, TContext>> states = new();
+    protected readonly Dictionary<TStateType, IState<TStateType, TContext>> states = new();
 
-    public abstract void Setup();
+    protected abstract void Setup();
     private void Awake()
     {
         Setup();
