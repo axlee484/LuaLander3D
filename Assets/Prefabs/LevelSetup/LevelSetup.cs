@@ -8,7 +8,10 @@ public class LevelData : MonoBehaviour
     [SerializeField] private Player playerPrefab;
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private Transform cameraStartPosition;
-    [SerializeField] private CinemachineCamera camera;
+    [SerializeField] private CameraController cameraController;
+    [SerializeField] private float finalOrthographicSize = 80f;
+    [SerializeField] private float zoomSpeed = 0.001f;
+    
     private Player player;
     public Player Player => player;
 
@@ -16,12 +19,19 @@ public class LevelData : MonoBehaviour
     {
         player = Instantiate(playerPrefab, spawnPosition);    
         player.transform.position = spawnPosition.position;  
-        camera.Target.TrackingTarget = player.transform;
     }
 
     private void Start()
     {
         LevelManager.Instance.SetCurrentLevel(LevelConfig.LevelNumber);
+        EventManager.Instance.LevelStartEvent += OnLevelStart;
+    }
+
+    private void OnLevelStart(int level)
+    {
+        if(level!= LevelConfig.LevelNumber) return;
+        cameraController.SetTarget(player.transform);
+        cameraController.SetFocus(finalOrthographicSize, zoomSpeed);
     }
 
 

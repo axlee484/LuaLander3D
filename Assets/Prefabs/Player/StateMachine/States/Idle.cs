@@ -15,5 +15,9 @@ namespace PlayerStates.StateMachine.States
             var (forwardInput, rotationInput) = GetInput();
             if(forwardInput != 0 || rotationInput != 0) InvokeChangeState(PlayerStateId.Flying);
         }
+        public override void OnCollisionEnter(Collision collision)
+        {
+            Context.player.DisableInput();
+        }
     }
 }

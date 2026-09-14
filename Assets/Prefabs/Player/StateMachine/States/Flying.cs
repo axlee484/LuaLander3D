@@ -41,5 +41,11 @@ namespace PlayerStates.StateMachine.States
             // AudioManager.Instance.FadeAudioSource(audioSource, 1f);
             audioSource.Stop();
         }
+
+        public override void OnCollisionEnter(Collision collision)
+        {
+            Context.player.DisableInput();
+        }
+        
     }
 }

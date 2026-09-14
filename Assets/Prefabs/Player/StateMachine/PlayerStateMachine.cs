@@ -24,5 +24,56 @@ public class PlayerStateMachine : BaseStateMachine<PlayerStateId, PlayerContext>
         states.Add(PlayerStateId.Landed, landedState);
         states.Add(PlayerStateId.Dead, deadState);
     }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(CurrentState is BasePlayerState playerState)
+        {
+            playerState.OnCollisionEnter(collision);
+        }
+    }
+    public void OnCollisionStay(Collision collision)
+    {
+        if(CurrentState is BasePlayerState playerState)
+        {
+            playerState.OnCollisionStay(collision);
+        }
+        
+        
+    }
+    public void OnCollisionExit(Collision collision)
+    {
+        if(CurrentState is BasePlayerState playerState)
+        {
+            playerState.OnCollisionExit(collision);
+        }
+       
+       
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(CurrentState is BasePlayerState playerState)
+        {
+            playerState.OnTriggerEnter(other);
+        }
+      
+    }
+   
+    public void OnTriggerStay(Collider other)
+    {
+        if(CurrentState is BasePlayerState playerState)
+        {
+            playerState.OnTriggerStay(other);
+        }
+     
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if(CurrentState is BasePlayerState playerState)
+        {
+            playerState.OnTriggerExit(other);
+        }
+
+     
+    }
 }
 

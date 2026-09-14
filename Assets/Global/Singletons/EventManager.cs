@@ -5,9 +5,14 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
     public event Action GameStartEvent;
+    public event Action<int> LevelStartEvent;
     public void InvokeGameStartEvent()
     {
-        GameStartEvent.Invoke();
+        GameStartEvent?.Invoke();
+    }
+    public void InvokeLevelStartEvent(int level)
+    {
+        LevelStartEvent?.Invoke(level);
     }
     private void Awake()
     {

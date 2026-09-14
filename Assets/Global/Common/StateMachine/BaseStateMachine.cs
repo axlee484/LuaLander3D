@@ -8,6 +8,7 @@ where TContext: struct
 {
     [SerializeField] private TStateType initialStateId;
     private IState<TStateType, TContext> currentState;
+    protected IState<TStateType, TContext> CurrentState => currentState;
     protected readonly Dictionary<TStateType, IState<TStateType, TContext>> states = new();
 
     protected abstract void Setup();

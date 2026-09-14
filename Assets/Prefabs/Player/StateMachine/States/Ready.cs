@@ -16,5 +16,10 @@ namespace PlayerStates.StateMachine.States
             var (forwardInput, rotationInput) = GetInput();
             if(forwardInput != 0 || rotationInput != 0) InvokeChangeState(PlayerStateId.Idle);
         }
+
+        public override void Exit()
+        {
+            EventManager.Instance.InvokeLevelStartEvent(LevelManager.Instance.CurrentLevel);
+        }
     }
 }

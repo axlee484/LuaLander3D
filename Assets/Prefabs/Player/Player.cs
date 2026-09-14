@@ -9,4 +9,12 @@ public class Player : MonoBehaviour
     {
         movement = GetComponent<RigidBodyMovement>();
     }
+    public void DisableInput()
+    {
+        GameInput.InputActions.Player.Disable();
+    }
+    public void EnableInput()
+    {
+        GameInput.InputActions.Player.Enable();
+    }
 }
