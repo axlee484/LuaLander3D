@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4568268348007786882}
   - component: {fileID: 5068227120605849688}
+  - component: {fileID: 8062995908426432712}
   m_Layer: 0
   m_Name: LandingPad
   m_TagString: Untagged
@@ -54,6 +55,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.5405817, y: 1.35, z: 4.48}
   m_Center: {x: 1.6847092, y: 0, z: 0.64999986}
+--- !u!114 &8062995908426432712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347401358129891622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdd976b2eba6f1bb8c62319e569b019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LandingPad
 --- !u!1001 &4986175452190202171
 PrefabInstance:
   m_ObjectHideFlags: 0

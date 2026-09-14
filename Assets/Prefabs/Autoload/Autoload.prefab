@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8082553235113224295}
   - component: {fileID: 7737658908055501915}
+  - component: {fileID: -5319435404656548403}
+  - component: {fileID: 7338786829948497114}
+  - component: {fileID: -3351556236699543314}
   m_Layer: 0
   m_Name: Autoload
   m_TagString: Untagged
@@ -44,3 +47,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5012f6fd77157cf94baa7b2ba9118766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInput
+--- !u!114 &-5319435404656548403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369493550342022382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb71fd15db48467739f9170d29f8ef01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventManager
+--- !u!114 &7338786829948497114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369493550342022382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0ec566085619309b7d54f4cf9cb4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  defaultLevel: 1
+  levelConfigs:
+  - {fileID: 11400000, guid: deccd57219f616de1806961e54b9bcfc, type: 2}
+  - {fileID: 11400000, guid: 7c16f9697e61702feaa41690a0ea2639, type: 2}
+  - {fileID: 11400000, guid: 6ad8026f535af9c5082aad6479d839e8, type: 2}
+--- !u!114 &-3351556236699543314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369493550342022382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5facb0e6fdbe5a620b7f75929de3b073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager

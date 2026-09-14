@@ -5,6 +5,11 @@ namespace PlayerStates.StateMachine.States
     public class Ready : BasePlayerState
     {
         public Ready(PlayerStateId stateId, PlayerContext context) : base(stateId, context){}
+        public override void Enter()
+        {
+            Context.player.TryGetComponent<Rigidbody>(out var rigidbody);
+            rigidbody.useGravity = false;
+        }
         
         public override void Update()
         {

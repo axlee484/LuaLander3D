@@ -5,6 +5,11 @@ namespace PlayerStates.StateMachine.States
     public class Idle : BasePlayerState
     {
         public Idle(PlayerStateId stateId, PlayerContext context) : base(stateId, context){}
+        public override void Enter()
+        {
+            Context.player.TryGetComponent<Rigidbody>(out var rigidbody);
+            rigidbody.useGravity = true;
+        }
         public override void Update()
         {
             var (forwardInput, rotationInput) = GetInput();

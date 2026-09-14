@@ -8,4 +8,5 @@ public class GameManager : MonoBehaviour
         if(Instance != null) Destroy(gameObject);
         Instance = this;
     }
+    
 }
