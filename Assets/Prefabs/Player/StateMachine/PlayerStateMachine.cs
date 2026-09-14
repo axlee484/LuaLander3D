@@ -2,12 +2,24 @@ using PlayerStates.StateMachine.States;
 using UnityEngine;
 
 
+public readonly struct PlayerContext
+{
+    public readonly Player player;
+    public readonly PlayerVisuals playerVisuals;
+    public PlayerContext(Player player, PlayerVisuals playerVisuals)
+    {
+        this.player = player;
+        this.playerVisuals = playerVisuals;
+        
+    }
+}
 public class PlayerStateMachine : BaseStateMachine<PlayerStateId, PlayerContext>
 {
     private PlayerContext CreateContext()
     {
         var player = GetComponent<Player>();
-        return new PlayerContext(player);
+        var playerVisuals = GetComponent<PlayerVisuals>();
+        return new PlayerContext(player, playerVisuals);
     }
     protected override void Setup()
     {

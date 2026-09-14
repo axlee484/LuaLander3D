@@ -10,14 +10,6 @@ public enum PlayerStateId
     Dead
 }
 
-public readonly struct PlayerContext
-{
-    public readonly Player player;
-    public PlayerContext(Player player)
-    {
-        this.player = player;
-    }
-}
 
 public abstract class BasePlayerState : IState<PlayerStateId, PlayerContext>
 {

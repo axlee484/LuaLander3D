@@ -45,4 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelConfig: {fileID: 0}
-  player: {fileID: 4229231182496396537, guid: ad6ab421d1964ab988eafe5c553a1167, type: 3}
+  playerPrefab: {fileID: 0}
+  spawnPosition: {fileID: 0}
+  cameraStartPosition: {fileID: 0}
+  cameraController: {fileID: 0}
+  finalOrthographicSize: 80
+  zoomSpeed: 2

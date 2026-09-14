@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.spaceKey.isPressed) LevelManager.Instance.LoadNextLevel();
+        if(Keyboard.current.spaceKey.wasPressedThisFrame) LevelManager.Instance.LoadNextLevel();
     }
 
     

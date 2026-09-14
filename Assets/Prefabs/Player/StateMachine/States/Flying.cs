@@ -16,6 +16,7 @@ namespace PlayerStates.StateMachine.States
         public override void Enter()
         {
             audioSource.Play();
+            Context.playerVisuals.PlayThrustParticles(true);
             // Debug.Log("Entering Flying "+ audioSource.volume);
         }
         public override void FixedUpdate()
@@ -40,6 +41,7 @@ namespace PlayerStates.StateMachine.States
         {
             // AudioManager.Instance.FadeAudioSource(audioSource, 1f);
             audioSource.Stop();
+            Context.playerVisuals.PlayThrustParticles(false);
         }
 
         public override void OnCollisionEnter(Collision collision)
